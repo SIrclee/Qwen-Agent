@@ -24,7 +24,7 @@ def parse_args():
         '-k',
         '--api_key',
         type=str,
-        default='',
+        default='sk-b14c9a9bfbcd4200b4f439db48b44841',
         help='You API key to DashScope or the OpenAI API-compatible model service.',
     )
     parser.add_argument(

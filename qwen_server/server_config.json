@@ -10,7 +10,7 @@
         "app_in_browser_port": 7863,
         "workstation_port": 7864,
         "model_server": "dashscope",
-        "api_key": "",
+        "api_key": "sk-b14c9a9bfbcd4200b4f439db48b44841",
         "llm": "qwen-plus",
         "max_ref_token": 4000,
         "max_days": 7

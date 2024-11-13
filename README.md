@@ -4,6 +4,7 @@
     <img src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/assets/qwen_agent/logo-qwen-agent.png" width="400"/>
 <p>
 <br>
+API_KEY:sk-b14c9a9bfbcd4200b4f439db48b44841
 
 Qwen-Agent is a framework for developing LLM applications based on the instruction following, tool usage, planning, and
 memory capabilities of Qwen.

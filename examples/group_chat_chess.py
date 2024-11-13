@@ -39,7 +39,9 @@ CFGS = {
 
 
 def test(query: str = '<1,1>'):
-    bot = GroupChat(agents=CFGS, llm={'model': 'qwen-max'})
+    bot = GroupChat(agents=CFGS, llm={'model': 'qwen-max',
+                                      'api_key':'sk-b14c9a9bfbcd4200b4f439db48b44841',
+                                      'model_server': 'dashscope'})
 
     messages = [Message('user', query, name=USER_NAME)]
     for response in bot.run(messages=messages):
