@@ -3,8 +3,12 @@ from qwen_agent.gui import WebUI
 
 
 def test():
-    bot = Assistant(llm={'model': 'qwen2-72b-instruct'})
-    messages = [{'role': 'user', 'content': [{'text': '介绍图一'}, {'file': 'https://arxiv.org/pdf/1706.03762.pdf'}]}]
+    llm_cfg = {
+        'model': 'qwen-max',
+        'api_key': 'sk-b14c9a9bfbcd4200b4f439db48b44841',
+        'model_server': 'dashscope'}
+    bot = Assistant(llm=llm_cfg)
+    messages = [{'role': 'user', 'content': [{'text': '如果想翻转图像应该怎么做？'}, {'file': 'E:/bishe_code/Qwen-Agent/examples/resource/doc.pdf'}]}]
     for rsp in bot.run(messages):
         print(rsp)
 
