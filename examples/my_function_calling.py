@@ -63,40 +63,40 @@ class ragTool(BaseTool):
         )
 
 
-# 步骤2：配置您所使用的LLM。
-llm_cfg = {
-        # 使用与OpenAI API兼容的模型服务，例如vLLM或Ollama：
-        'model': 'qwen-max',
-        'api_key':'sk-b14c9a9bfbcd4200b4f439db48b44841',
-        'model_server': 'dashscope'
-}
-
-
-# 步骤3：创建一个智能体。这里我们以 `Assistant` 智能体为例，它能够使用工具并读取文件。
-system_instruction = '''你是一个乐于助人的AI助手。
-在收到用户的请求后，你应该：
-- 将用户的请求作为参数调用ragTool
-- 返回结果
-你只需要把ragTool的返回结果中的"fuhao"对应value输出即可。'''
-tools = [ragTool()]  # `code_interpreter` 是框架自带的工具，用于执行代码。
-
-bot = Assistant(llm=llm_cfg,
-                system_message=system_instruction,
-                function_list=tools)
-
-
-# 步骤4：作为聊天机器人运行智能体。
-messages = []  # 这里储存聊天历史。
-# 例如，输入请求 "绘制一只狗并将其旋转90度"。
-query = input('用户请求: ')
-# 将用户请求添加到聊天历史。
-messages.append({'role': 'user', 'content': query})
-response = []
-completed_answer = None
-for response in bot.run(messages=messages):
-    # 流式输出。
-    # print('机器人回应:')
-    # pprint.pprint(response, indent=2)
-    completed_answer = response
-
-print(completed_answer[2]["content"])
+# # 步骤2：配置您所使用的LLM。
+# llm_cfg = {
+#         # 使用与OpenAI API兼容的模型服务，例如vLLM或Ollama：
+#         'model': 'qwen-max',
+#         'api_key':'sk-b14c9a9bfbcd4200b4f439db48b44841',
+#         'model_server': 'dashscope'
+# }
+#
+#
+# # 步骤3：创建一个智能体。这里我们以 `Assistant` 智能体为例，它能够使用工具并读取文件。
+# system_instruction = '''你是一个乐于助人的AI助手。
+# 在收到用户的请求后，你应该：
+# - 将用户的请求作为参数调用ragTool
+# - 返回结果
+# 你只需要把ragTool的返回结果中的"fuhao"对应value输出即可。'''
+# tools = [ragTool()]  # `code_interpreter` 是框架自带的工具，用于执行代码。
+#
+# bot = Assistant(llm=llm_cfg,
+#                 system_message=system_instruction,
+#                 function_list=tools)
+#
+#
+# # 步骤4：作为聊天机器人运行智能体。
+# messages = []  # 这里储存聊天历史。
+# # 例如，输入请求 "绘制一只狗并将其旋转90度"。
+# query = input('用户请求: ')
+# # 将用户请求添加到聊天历史。
+# messages.append({'role': 'user', 'content': query})
+# response = []
+# completed_answer = None
+# for response in bot.run(messages=messages):
+#     # 流式输出。
+#     # print('机器人回应:')
+#     # pprint.pprint(response, indent=2)
+#     completed_answer = response
+#
+# print(completed_answer[2]["content"])

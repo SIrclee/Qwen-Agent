@@ -1,0 +1,6 @@
+1.将ragflow的接口集成到agent，让agent能够调用rag的接口（√）
+2.将两个agent的流程串联起来（√）
+————————————————————————————————————————————————
+11.17
+1.写prompt，两个Agent的prompt和ragflow内置的prompt，看看在哪里写比较好
+已完成：将agent1的prompt改为Hyde格式的，生成一个列表，列表里是可能的标识中文名
