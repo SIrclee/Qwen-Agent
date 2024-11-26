@@ -20,7 +20,7 @@ class ragTool(BaseTool):
         {
             'name': 'sign_description',
             'type': 'string',
-            'description': '标识的简单描述',
+            'description': '关于标识描述的list',
             'required': True
         }
     ]
@@ -50,7 +50,7 @@ class ragTool(BaseTool):
                 },
                 {
                     "role": "user",
-                    "content": param
+                    "content": str(param)
                 }
             ]
         }
